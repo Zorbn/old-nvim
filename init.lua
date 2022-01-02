@@ -1,3 +1,4 @@
+require('impatient')
 require('keybinds')
 require('plugins')
 
@@ -11,6 +12,10 @@ vim.o.shiftwidth = 0
 vim.g.tokyonight_style = "night"
 vim.cmd("colorscheme tokyonight")
 vim.opt.termguicolors = true
+
+-- Lines
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- LSP
 local lsp_installer = require'nvim-lsp-installer'

@@ -14,12 +14,8 @@ map('n', '<cr>', ':', {})
 map('n', '<leader>ff', ":lua require'telescope'.extensions.file_browser.file_browser()<cr>",  { noremap = true })
 map('n', '<leader>fa', ':Telescope find_files<cr>',                                           { noremap = true })
 map('n', '<leader>fb', ':Telescope buffers<cr>',                                              { noremap = true })
-
--- Quick Buffers
-map('n', '<leader>bn', ':bn<cr>',   { noremap = true })
-map('n', '<leader>bp', ':bp<cr>',   { noremap = true })
-map('n', '<leader>bd', ':bd<cr>',   { noremap = true })
-
--- Quick Splits
-map('n', '<leader>sp', ':sp<cr>', { noremap = true })
-map('n', '<leader>sv', ':vs<cr>', { noremap = true })
+map('n', '<leader>fg', ':Telescope grep_string<cr>', { noremap = true })
+map('n', '<leader>fo', ':Telescope oldfiles<cr>',    { noremap = true })
+map('n', '<leader>fm', ':Telescope marks<cr>',       { noremap = true })
+map('n', '<leader>fc', ':Telescope git_commits<cr>', { noremap = true })
+map('n', '<leader>fs', ':Telescope git_status<cr>',  { noremap = true })

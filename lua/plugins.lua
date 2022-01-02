@@ -1,7 +1,7 @@
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+     packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 return require('packer').startup(function(use)
@@ -25,7 +25,16 @@ return require('packer').startup(function(use)
             require'indent_blankline'.setup {
                 show_current_context = true,
                 show_current_context_start = true,
+                buftype_exclude = { 'terminal' },
+                filetype_exclude = { 'alpha' },
             }
+        end
+    }
+
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'startscreen'.opts)
         end
     }
 
@@ -38,16 +47,35 @@ return require('packer').startup(function(use)
         config = function() require'nvim-tree'.setup {} end
     }
 
+    use { 'nvim-telescope/telescope-file-browser.nvim' }
+
     use {
         'nvim-telescope/telescope.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function()
-            require'telescope'.setup {
+            local tele = require'telescope'
+
+            tele.setup {
                 pickers = {
                     find_files = {
                         theme = "ivy"
                     },
                     buffers = {
+                        theme = "ivy"
+                    },
+                    grep_string = {
+                        theme = "ivy"
+                    },
+                    oldfiles = {
+                        theme = "ivy"
+                    },
+                    git_commits = {
+                        theme = "ivy"
+                    },
+                    git_status = {
+                        theme = "ivy"
+                    },
+                    marks = {
                         theme = "ivy"
                     }
                 },
@@ -58,11 +86,9 @@ return require('packer').startup(function(use)
                 }
             }
 
-            require'telescope'.load_extension "file_browser"
+            tele.load_extension 'file_browser'
         end
     }
-
-    use { 'nvim-telescope/telescope-file-browser.nvim' }
 
     -- Completion
     use {
@@ -114,6 +140,9 @@ return require('packer').startup(function(use)
             }
         end
     }
+
+    -- Misc
+    use { 'lewis6991/impatient.nvim' }
 
     if packer_bootstrap then
         require('packer').sync()
