@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
                 show_current_context = true,
                 show_current_context_start = true,
                 buftype_exclude = { 'terminal' },
-                filetype_exclude = { 'alpha' },
+                filetype_exclude = { 'alpha', 'packer' },
             }
         end
     }
@@ -35,6 +35,14 @@ return require('packer').startup(function(use)
         'goolord/alpha-nvim',
         config = function ()
             require'alpha'.setup(require'startscreen'.opts)
+        end
+    }
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+        config = function()
+            require'lualine'.setup {}
         end
     }
 
