@@ -25,8 +25,19 @@ return require('packer').startup(function(use)
             require'indent_blankline'.setup {
                 show_current_context = true,
                 show_current_context_start = true,
+                show_trailing_blankline_indent = false,
+                show_first_indent_level = false,
                 buftype_exclude = { 'terminal' },
-                filetype_exclude = { 'alpha', 'packer' },
+                filetype_exclude = {
+                    'alpha',
+                    'packer',
+                    'help',
+                    'terminal',
+                    'lspinfo',
+                    'TelescopePrompt',
+                    'TelescopeResults',
+                    '',
+                },
             }
         end
     }
