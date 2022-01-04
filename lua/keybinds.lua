@@ -22,12 +22,15 @@ map('n', '<leader>fc', ':Telescope git_commits<cr>', { noremap = true })
 map('n', '<leader>fs', ':Telescope git_status<cr>',  { noremap = true })
 
 -- LSP
-map('n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<cr>',         { noremap = true})
-map('n', '<leader>li', '<cmd>lua vim.lsp.buf.implementation()<cr>',     { noremap = true})
-map('n', '<leader>lR', '<cmd>lua vim.lsp.buf.references()<cr>',         { noremap = true})
-map('n', '<leader>lD', '<cmd>lua vim.lsp.buf.declaration()<cr>',        { noremap = true})
-map('n', '<leader>la', '<cmd>Telescope lsp_code_actions<cr>',           { noremap = true})
-map('n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<cr>',         { noremap = true})
-map('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<cr>',             { noremap = true})
+map('n', '<leader>ld', ':lua vim.lsp.buf.definition()<cr>',         { noremap = true })
+map('n', '<leader>li', ':lua vim.lsp.buf.implementation()<cr>',     { noremap = true })
+map('n', '<leader>lR', ':lua vim.lsp.buf.references()<cr>',         { noremap = true })
+map('n', '<leader>lD', ':lua vim.lsp.buf.declaration()<cr>',        { noremap = true })
+map('n', '<leader>la', ':Telescope lsp_code_actions<cr>',           { noremap = true })
+map('n', '<leader>lf', ':lua vim.lsp.buf.formatting()<cr>',         { noremap = true })
+map('n', '<leader>lr', ':lua vim.lsp.buf.rename()<cr>',             { noremap = true })
 
-map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>',                       { noremap = true})
+map('n', 'K', ':lua vim.lsp.buf.hover()<cr>',                       { noremap = true })
+
+-- Terminal
+map('t', '<esc>', '<C-\\><C-n>', { noremap = true })

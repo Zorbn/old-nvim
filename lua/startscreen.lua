@@ -42,7 +42,7 @@ local default_header = {
     },
     opts = {
         position = "center",
-        hl = "Comment",
+        hl = "Number",
         wrap = "overflow";
     },
 }
@@ -69,7 +69,7 @@ local function button(sc, txt, keybind, keybind_opts)
         cursor = 5,
         width = 50,
         align_shortcut = "right",
-        hl = "Comment",
+        hl = "Identifier",
         hl_shortcut = "Comment",
     }
     if keybind then

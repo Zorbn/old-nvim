@@ -1,6 +1,6 @@
-require('impatient')
 require('keybinds')
 require('plugins')
+require('impatient')
 
 -- Indentation
 vim.o.tabstop = 4
