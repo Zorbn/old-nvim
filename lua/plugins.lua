@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
                     'help',
                     'terminal',
                     'lspinfo',
+                    'lsp-installer',
                     'TelescopePrompt',
                     'TelescopeResults',
                     '',
