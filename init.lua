@@ -9,7 +9,7 @@ vim.o.softtabstop = -1
 vim.o.shiftwidth = 0
 
 -- Colors
-vim.g.tokyonight_style = "night"
+vim.g.tokyonight_style = "day"
 vim.cmd("colorscheme tokyonight")
 vim.opt.termguicolors = true
 
@@ -33,3 +33,4 @@ vim.diagnostic.config({
 
 -- COQ
 vim.cmd("COQnow -s")
+vim.g.coq_settings = { ['clients.snippets.warn'] = {} }
