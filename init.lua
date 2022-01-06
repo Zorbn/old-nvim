@@ -9,8 +9,8 @@ vim.o.softtabstop = -1
 vim.o.shiftwidth = 0
 
 -- Colors
-vim.g.tokyonight_style = "day"
-vim.cmd("colorscheme tokyonight")
+vim.cmd("set background=light")
+vim.cmd("colorscheme one-nvim")
 vim.opt.termguicolors = true
 
 -- Lines

@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use { 'folke/tokyonight.nvim' }
+    use { 'Th3Whit3Wolf/one-nvim' }
 
     -- File management
     use {
