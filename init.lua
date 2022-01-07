@@ -1,6 +1,6 @@
-require('keybinds')
-require('plugins')
-require('impatient')
+require'keybinds'
+require'plugins'
+require'impatient'
 
 -- Indentation
 vim.o.tabstop = 4
@@ -34,3 +34,10 @@ vim.diagnostic.config({
 -- COQ
 vim.cmd("COQnow -s")
 vim.g.coq_settings = { ['clients.snippets.warn'] = {} }
+
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true
+    }
+}

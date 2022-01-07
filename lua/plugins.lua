@@ -26,7 +26,6 @@ return require('packer').startup(function(use)
                 show_current_context = true,
                 show_current_context_start = true,
                 show_trailing_blankline_indent = false,
-                show_first_indent_level = false,
                 buftype_exclude = { 'terminal' },
                 filetype_exclude = {
                     'alpha',
@@ -54,7 +53,12 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
         config = function()
-            require'lualine'.setup {}
+            require'lualine'.setup {
+                options = {
+                    component_seperators = { left = '', right = '' },
+                    section_seperators   = { left = '', right = '' }
+                }
+            }
         end
     }
 
