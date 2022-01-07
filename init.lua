@@ -9,9 +9,9 @@ vim.o.softtabstop = -1
 vim.o.shiftwidth = 0
 
 -- Colors
+vim.opt.termguicolors = true
 vim.cmd("set background=light")
 vim.cmd("colorscheme one-nvim")
-vim.opt.termguicolors = true
 
 -- Lines
 vim.o.number = true
