@@ -8,7 +8,6 @@ map('n', '<leader>tr', ':NvimTreeRefresh<cr>',  { noremap = true })
 map('n', '<leader>tf', ':NvimTreeFindFile<cr>', { noremap = true })
 
 -- Conveniance
-map('n', '<cr>', ':', {})
 map('n', '<leader>n', ':noh<cr>', { noremap = true })
 
 -- Telescope
