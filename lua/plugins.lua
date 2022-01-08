@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
         config = function() require'colorizer'.setup {} end
     }
 
-    use {
+    --[[ use {
         'lukas-reineke/indent-blankline.nvim',
         config = function()
             require'indent_blankline'.setup {
@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
                 },
             }
         end
-    }
+    } ]]
 
     use {
         'goolord/alpha-nvim',
